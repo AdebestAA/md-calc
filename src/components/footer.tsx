@@ -23,7 +23,7 @@ export default function Footer() {
             </h2>
 
             {/* App buttons */}
-            <div className="flex gap-4 mt-8">
+            {/* <div className="flex gap-4 mt-8">
               <Image
                 src="/app-store.svg"
                 alt="Download on the App Store"
@@ -36,7 +36,7 @@ export default function Footer() {
                 width={140}
                 height={42}
               />
-            </div>
+            </div> */}
           </div>
 
           {/* LINKS */}
