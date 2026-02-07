@@ -19,7 +19,7 @@ export default function SigninModal() {
       {/* Modal */}
       <div className="relative lg:w-full lg:max-w-md w-[90%] bg-bg-primary rounded shadow-lg z-10">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 bg-emerald-700 text-white rounded-t">
+        <div className="flex items-center justify-between px-6 py-4 bg-primary text-white rounded-t">
           <h2 className="font-semibold text-lg">Log In</h2>
           <button
             onClick={closeSigninModal}
