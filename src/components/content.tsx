@@ -23,6 +23,9 @@ const Content = () => {
       <TopNav />
       {/* Content */}
 
+      {/* <div>
+        <img src={"/icons/icon.svg"} alt="okay" />
+      </div> */}
       <div className="max-w-lg mx-auto text-sm my-8  ">
         {contentDummy.map((item, index) => {
           return (

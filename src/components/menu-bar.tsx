@@ -180,7 +180,11 @@ const Menubar = () => {
                 <Link onClick={closeModal} href={"/"} className="p-2">
                   About
                 </Link>
-                <Link onClick={closeModal} href={"/"} className="py-2 px-8">
+                <Link
+                  onClick={closeModal}
+                  href={"/disclaimer"}
+                  className="py-2 px-8"
+                >
                   Legal
                 </Link>
               </aside>

@@ -28,7 +28,7 @@ const Header = () => {
   }, []);
 
   return (
-    <nav className="flex justify-between items-start bg-primary px-4 py-2 sticky top-0">
+    <nav className="flex justify-between items-start bg-primary px-4 py-2 sticky top-0 text-sm">
       <div className="w-[10%] flex items-center gap-x-4">
         <button className="lg:inline hidden" onClick={openModal}>
           <MenuIcon stroke="white" size={30} />
@@ -105,16 +105,19 @@ const Header = () => {
         <MenuIcon stroke="white" size={30} />
       </button>
       <div className="hidden lg:flex items-center justify-between gap-x-4  text-xs  min-w-[10%] ">
-        <button onClick={openSigninModal} className="text-white font-medium">
+        <button
+          onClick={openSigninModal}
+          className="text-white font-medium text-[0.7rem]"
+        >
           LOGIN
         </button>
         <button
           onClick={() => router.push("/signup")}
-          className="bg-yellow-one text-white px-1 py-3 rounded-sm font-medium"
+          className="bg-yellow-one text-white px-1 py-3 rounded-sm font-medium text-[0.7rem]"
         >
           SIGNUP
         </button>
-        <button>
+        <button className="">
           <Bell fill="white" stroke="white" />
         </button>
       </div>
