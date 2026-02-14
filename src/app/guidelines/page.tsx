@@ -50,12 +50,12 @@ const page = () => {
   return (
     <div className="md:px-0 px-2">
       {/* header */}
-      <header className="mt-8 bg-gray-50 px-6 py-1 max-w-lg mx-auto border-b-2 border-gray-300 overflow-y-auto">
+      <header className="mt-8 mb-6 bg-gray-50 px-6 py-1 max-w-lg mx-auto border-b-2 border-gray-300 overflow-y-auto">
         <h1 className="text-center font-semibold text-2xl">
           {" "}
           Guideline Summaries
         </h1>
-        <p className="text-sm">
+        <p className="text-xs my-2">
           Welcome to Guideline Summaries! Our point of care summaries are
           extracted directly from medical society practice guidelines to help
           you stay current with evidence based recommendations. Have feedback

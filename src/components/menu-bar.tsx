@@ -122,7 +122,7 @@ const Menubar = () => {
                             return (
                               <Link
                                 onClick={closeModal}
-                                className="border-b border-gray-600 py-2"
+                                className="border-b cursor-pointer border-gray-600 py-2"
                                 key={innerItemIndex}
                                 href={"/"}
                               >
@@ -139,7 +139,7 @@ const Menubar = () => {
                 return (
                   <Link
                     onClick={closeModal}
-                    className="py-2 border-b border-gray-600"
+                    className="py-2  hover:bg-gray-300 cursor-pointer border-b border-gray-600"
                     key={item.id}
                     href={item.link}
                   >
@@ -158,7 +158,7 @@ const Menubar = () => {
                         closeModal();
                         openSigninModal();
                       }}
-                      className="py-2 border-b border-gray-600 text-start"
+                      className="py-2 hover:bg-gray-300 cursor-pointer border-b border-gray-600 text-start"
                       key={item.id}
                     >
                       {item.title}
@@ -168,7 +168,7 @@ const Menubar = () => {
                 return (
                   <Link
                     onClick={closeModal}
-                    className="py-2 border-b border-gray-600"
+                    className="py-2 hover:bg-gray-300 cursor-pointer border-b border-gray-600"
                     key={item.id}
                     href={item.link}
                   >
