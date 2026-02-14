@@ -36,3 +36,7 @@
   /* colors  */
   --color-yellow-one: #ffb600;
 }
+
+.add-shadow {
+  box-shadow: 0 0 10 0 #525151;
+}

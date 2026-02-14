@@ -23,7 +23,7 @@ const Content = () => {
       <TopNav />
       {/* Content */}
 
-      <div className="max-w-lg md:mx-auto text-sm my-8 mx-2 ">
+      <div className="max-w-lg mx-auto text-sm my-8  ">
         {contentDummy.map((item, index) => {
           return (
             <div
