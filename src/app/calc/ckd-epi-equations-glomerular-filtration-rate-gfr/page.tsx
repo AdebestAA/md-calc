@@ -20,7 +20,7 @@ const formSchema = z.object({
 export type FormValues = z.infer<typeof formSchema>;
 
 const equations = [
-  "2021 C",
+  "2021 CKD-EPI Creatinine",
   "2021 CKD-EPI Creatinine-Cystatin C",
   "2009 CKD-EPI Creatinine",
   "2012 CKD-EPI Cystatin C",
