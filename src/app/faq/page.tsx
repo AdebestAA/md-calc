@@ -55,6 +55,7 @@ const page = () => {
           return (
             <Link
               href={"/"}
+              key={item.id}
               className="flex flex-col items-center  add-shadow  w-[30%] h-50 px-2"
             >
               <aside className="w-20 h-20 bg-primary/20  flex items-center justify-center rounded-full mt-6">

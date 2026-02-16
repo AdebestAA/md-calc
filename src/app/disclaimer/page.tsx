@@ -4,8 +4,8 @@ const page = () => {
   return (
     <div className="lg:px-32 md:px-16 px-4 my-16">
       <div className="font-semibold">
-        For the Terms and Conditions governing use of MDCalc's Services, please
-        visit{" "}
+        For the Terms and Conditions governing use of MDCalc&lsquo;s Services,
+        please visit{" "}
         <Link
           href={"https://www.mdcalc.com/terms-and-conditions"}
           target="_blank"
@@ -31,7 +31,7 @@ const page = () => {
           case along with your medical knowledge when making any decision.
           MDCalc is not a replacement for experienced clinical judgment. In the
           words of Jerry Hoffman, “If you think the patient needs a test, do the
-          test! Don't not do something a patient needs just because a score
+          test! Don&apos;t not do something a patient needs just because a score
           tells you something.” MDCalc cannot and will not be held legally,
           financially, or medically responsible for decisions physicians make
           using our calculators, equations, content, and algorithms.
@@ -46,11 +46,11 @@ const page = () => {
           Services and the output therefrom are not intended for, and should not
           be used by, laypersons.
           <br />
-          MDCalc's content developers carefully structure the content to conform
-          to the standards of professional practice that prevail at the time of
-          development. However, standards and practices in medicine change as
-          new data becomes available and users of the Services should consult a
-          variety of sources.
+          MDCalc&lsquo;s content developers carefully structure the content to
+          conform to the standards of professional practice that prevail at the
+          time of development. However, standards and practices in medicine
+          change as new data becomes available and users of the Services should
+          consult a variety of sources.
           <br />
           The Services do not offer medical advice. By licensing, viewing, using
           and/or accessing the Services, you acknowledge and agree that the

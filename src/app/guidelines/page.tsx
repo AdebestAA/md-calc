@@ -38,7 +38,7 @@ const headers = [
   },
 ];
 
-const page = () => {
+const Page = () => {
   const [contentToDisplay, setContentToDisplay] = useState<string>("acep");
   const [data, setData] = useState<any[]>(contentAcep);
 
@@ -109,4 +109,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

@@ -43,7 +43,7 @@ export default function SignupForm() {
 
       <h1 className="text-2xl font-semibold mb-1">Welcome to MDCalc</h1>
       <p className="text-sm text-gray-500 mb-6">
-        Just tell us a few things about yourself and we'll take care of the
+        Just tell us a few things about yourself and we&apos;ll take care of the
         rest.
       </p>
 

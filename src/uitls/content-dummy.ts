@@ -8,6 +8,7 @@ export const contentDummy = [
     id: 2,
     title: "CKD-EPI Equations for Glomerular Filtration Rate (GFR)",
     desc: "Estimates GFR.",
+    link: "ckd-epi-equations-glomerular-filtration-rate-gfr",
   },
   {
     id: 3,

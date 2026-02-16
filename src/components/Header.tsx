@@ -1,7 +1,7 @@
 "use client";
 import { useMenuModalStore } from "@/store/useMenuModalStore";
 import { useSigninStoreModal } from "@/store/useSigninStoreModal";
-import { Bell, MenuIcon, Plus, Search } from "lucide-react";
+import { Bell, MenuIcon, Search } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -14,7 +14,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScrollEffect = () => {
-      console.log(window.scrollY);
+      // console.log(window.scrollY);
       if (window.scrollY) {
         setScrolled(true);
       } else {
@@ -71,7 +71,7 @@ const Header = () => {
       <div className="w-[50%]">
         {/* logo */}
         <div
-          className={` flex-col items-center transition-all duration-500   ${scrolled ? "max-h-0 opacity-0 -translate-y-4" : "max-h-40 opacity-100 translate-y-0"} lg:flex   hidden`}
+          className={` flex-col items-center transition-all duration-500   ${scrolled ? "max-h-0 opacity-0 -translate-y-4 hidden" : "hidden max-h-40 opacity-100 translate-y-0 lg:flex"}    `}
         >
           <div className="flex items-center ">
             <span className="text-6xl font-extrabold text-white">MD</span>
@@ -87,10 +87,10 @@ const Header = () => {
 
         {/* search */}
         <div className={`flex items-center `}>
-          <button className="bg-yellow-one w-[3%] h-10 flex items-center justify-center">
+          <button className="bg-yellow-one lg:w-[3%] w-[15%] h-10 flex items-center justify-center">
             <Search stroke="white" />
           </button>
-          <div className="w-[97%]">
+          <div className="lg:w-[97%] w-[85%]">
             <input
               type="text"
               className="bg-white w-full h-10 focus:border-none focus:outline-none px-4 "

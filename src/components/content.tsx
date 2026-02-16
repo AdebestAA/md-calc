@@ -7,6 +7,7 @@ import {
   FileText,
   List,
 } from "lucide-react";
+import Link from "next/link";
 
 const navItems = [
   { label: "Popular", icon: LineChart },
@@ -29,8 +30,9 @@ const Content = () => {
       <div className="max-w-lg mx-auto text-sm my-8  ">
         {contentDummy.map((item, index) => {
           return (
-            <div
+            <Link
               key={index}
+              href={item.link ? `/calc/${item.link}` : "/"}
               className="flex justify-between  border-2 border-gray-600 rounded-sm mt-4 py-2 px-4"
             >
               <aside>
@@ -40,7 +42,7 @@ const Content = () => {
               <aside>
                 <Star stroke="gray" />
               </aside>
-            </div>
+            </Link>
           );
         })}
       </div>
