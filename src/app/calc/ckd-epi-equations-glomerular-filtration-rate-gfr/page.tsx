@@ -119,7 +119,7 @@ export default function CKDEpiCalculator() {
       const creatinine = watch("creatinine");
 
       handleSubmit(age, sex, creatinine);
-    }, 2000);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, [values, formState.isValid, loading]);
