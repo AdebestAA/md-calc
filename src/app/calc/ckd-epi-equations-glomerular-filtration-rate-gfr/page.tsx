@@ -357,7 +357,7 @@ export default function CKDEpiCalculator() {
                     </p>
                   </div>
                 </aside>
-                <p className="text-red-500 text-end">
+                {/* <p className="text-red-500 text-end">
                   {formState.errors.creatinine
                     ? formState.errors.creatinine.message
                     : isNaN(Number(watch("creatinine")))
@@ -366,7 +366,7 @@ export default function CKDEpiCalculator() {
                           Number(watch("creatinine")) < 62
                         ? "number should be from 62 to 115"
                         : ""}
-                </p>
+                </p> */}
               </div>
 
               {/* Result */}
