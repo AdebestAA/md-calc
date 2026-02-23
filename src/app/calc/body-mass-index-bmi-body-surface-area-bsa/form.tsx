@@ -171,14 +171,14 @@ const FormBMI = () => {
         {/* Weight */}
         <div className="flex items-center justify-between py-3 border-t-2 border-border ">
           <h1>Weight</h1>
-          <aside className="w-2/4 ">
+          <aside className="md:w-2/4 w-[70%]  ">
             <div className="flex items-center  w-full ">
               <input
                 value={formValues.weight}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   setFormValues({ ...formValues, weight: e.target.value })
                 }
-                className="border border-gray-300 focus-visible:outline-none shadow-inner px-3 h-10 w-3/4 inner-shadow placeholder:font-semibold"
+                className="border border-gray-300 focus-visible:outline-none shadow-inner px-3 h-10 w-3/4 inner-shadow md:placeholder:font-semibold placeholder:font-medium"
                 placeholder={
                   units.weight == "kg" ? "Norm: 1 - 150" : "Norm: 2 - 330"
                 }
@@ -210,14 +210,14 @@ const FormBMI = () => {
         {/* height*/}
         <div className="flex items-center justify-between py-3 border-t-2 border-border ">
           <h1>Height</h1>
-          <div className=" w-2/4">
+          <div className=" w-[70%] md:w-2/4">
             <aside className="flex items-center  w-full">
               <input
                 value={formValues.height}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                   setFormValues({ ...formValues, height: e.target.value });
                 }}
-                className="border border-gray-300 focus-visible:outline-none shadow-inner px-3 h-10 w-3/4 inner-shadow placeholder:font-semibold"
+                className="border border-gray-300 focus-visible:outline-none shadow-inner px-3 h-10 w-3/4 inner-shadow md:placeholder:font-semibold placeholder:font-medium "
                 placeholder={
                   units.height == "cm" ? "Norm: 152 - 213" : "Norm: 60 - 84"
                 }

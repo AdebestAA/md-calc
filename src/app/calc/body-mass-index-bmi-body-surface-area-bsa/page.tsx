@@ -198,7 +198,7 @@ const Page = () => {
         </div>
 
         {/* Second Section */}
-        <div className="w-[30%]">second section</div>
+        <div className="w-[30%]"></div>
       </main>
     </div>
   );
