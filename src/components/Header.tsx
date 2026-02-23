@@ -13,18 +13,26 @@ const Header = () => {
   const { openModal } = useMenuModalStore();
 
   useEffect(() => {
+    let timeoutId: ReturnType<typeof setTimeout>;
     const handleScrollEffect = () => {
       // console.log(window.scrollY);
-      if (window.scrollY) {
-        setScrolled(true);
+      if (window.scrollY >= 20) {
+        timeoutId = setTimeout(() => {
+          setScrolled(true);
+        }, 50);
       } else {
-        setScrolled(false);
+        timeoutId = setTimeout(() => {
+          setScrolled(false);
+        }, 50);
       }
     };
 
     window.addEventListener("scroll", handleScrollEffect);
 
-    return () => window.removeEventListener("scroll", handleScrollEffect);
+    return () => {
+      window.removeEventListener("scroll", handleScrollEffect);
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   return (
@@ -87,10 +95,10 @@ const Header = () => {
 
         {/* search */}
         <div className={`flex items-center `}>
-          <button className="bg-yellow-one lg:w-[3%] w-[15%] h-10 flex items-center justify-center">
+          <button className="bg-yellow-one lg:w-[10%] w-[15%] h-10 flex items-center justify-center">
             <Search stroke="white" />
           </button>
-          <div className="lg:w-[97%] w-[85%]">
+          <div className="lg:w-[90%] w-[85%]">
             <input
               type="text"
               className="bg-white w-full h-10 focus:border-none focus:outline-none px-4 "

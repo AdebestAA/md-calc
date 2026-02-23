@@ -8,18 +8,33 @@ const Page = () => {
     "when to use" | "pearls/pitfalls" | "when use"
   >("when to use");
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="max-w-4xl  mx-auto ">
       {/* header  */}
-      <header className="lg:flex py-6">
+      <header className="lg:flex md:flex-row  flex-col-reverse  py-6 lg:mx-0 mx-2">
+        <div className="w-full md:hidden  flex justify-end gap-x-2">
+          <button className="flex text-gray-one items-center gap-x-1">
+            <span>
+              <Star size={17} />
+            </span>{" "}
+            <span>Favorite</span>
+          </button>
+          <button className="flex text-gray-one items-center gap-x-1">
+            <span>
+              <Share size={17} />
+            </span>{" "}
+            <span>Share</span>
+          </button>
+        </div>
         {/* First Section */}
-        <div className="w-[70%] text-gray-one">
-          <h1 className="text-3xl font-bold ">
+        <div className="md:w-[70%] w-full   text-gray-one">
+          <h1 className="md:text-3xl text-xl font-bold ">
             BMI Calculator (Body Mass Index and BSA)
           </h1>
           <p>Calculates body mass index and body surface area.</p>
         </div>
         {/* second */}
-        <div className="w-[30%] flex justify-end gap-x-2">
+
+        <div className="w-[30%] md:flex hidden justify-end gap-x-2">
           <button className="flex text-gray-one items-center gap-x-1">
             <span>
               <Star size={17} />
@@ -36,10 +51,10 @@ const Page = () => {
       </header>
 
       {/* Content */}
-      <main className="lg:flex">
+      <main className="lg:flex md:mx-0 mx-2">
         {/* first section  */}
 
-        <div className="w-[70%]">
+        <div className="md:w-[70%] w-full">
           <header className="bg-gray-two text-white p-2">
             <h1 className="font-semibold text-md capitalize">INSTRUCTIONS</h1>
             <p className="text-sm my-2 font-medium">
