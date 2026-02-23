@@ -3,8 +3,11 @@
 @theme {
   /* Brand */
   --color-primary: #1bb193;
+  --color-primary-two: #018a6f;
   --color-dark-primary: #053a3a;
   --color-primary-foreground: #ffffff;
+  --color-gray-one: #595959;
+  --color-gray-two: #5c7088;
 
   --color-secondary: #34d399;
   --color-secondary-foreground: #053a3a;
@@ -44,3 +47,8 @@
 /* div {
   color: #145548;
 } */
+
+.inner-shadow {
+  box-shadow: inset 0 0px 5px 1px #a8a7a7;
+  /* color: #018a6f; */
+}

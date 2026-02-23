@@ -5,6 +5,8 @@ import Footer from "@/components/footer";
 import SigninModal from "@/components/modals/signin-modal";
 import Header from "@/components/Header";
 import Menubar from "@/components/menu-bar";
+import { Toaster } from "react-hot-toast";
+import ReactQueryProvider from "@/providers/react-query-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,13 +33,26 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="">
-          <SigninModal />
-          <Menubar />
-          <Header />
-          {children}
-          <Footer />
-        </div>
+        <ReactQueryProvider>
+          <div className="">
+            <Toaster
+              position="top-center"
+              toastOptions={{
+                duration: 3000,
+                style: {
+                  background: "#0a363c",
+                  color: "#fff",
+                  fontWeight: "semibold",
+                },
+              }}
+            />
+            <SigninModal />
+            <Menubar />
+            <Header />
+            {children}
+            <Footer />
+          </div>
+        </ReactQueryProvider>
       </body>
     </html>
   );

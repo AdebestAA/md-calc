@@ -1,8 +1,11 @@
+import { link } from "fs";
+
 export const contentDummy = [
   {
     id: 1,
-    title: "Creatinine Clearance (Cockcroft-Gault Equation)",
-    desc: "Estimate creatine clearance (Kidney function).",
+    title: "BMI Calculator (Body Mass Index and BSA)",
+    desc: "Categorizes obesity, assists some med dosing.",
+    link: "body-mass-index-bmi-body-surface-area-bsa",
   },
   {
     id: 2,
@@ -14,6 +17,7 @@ export const contentDummy = [
     id: 3,
     title: "Mean Arterial Pressure (MAP)",
     desc: "Calculates MAP.",
+    link: "",
   },
   {
     id: 4,
@@ -22,8 +26,8 @@ export const contentDummy = [
   },
   {
     id: 5,
-    title: "BMI Calculator (Body Mass Index and BSA)",
-    desc: "Categorizes obesity, assists some med dosing.",
+    title: "Creatinine Clearance (Cockcroft-Gault Equation)",
+    desc: "Estimate creatine clearance (Kidney function).",
   },
   {
     id: 6,
