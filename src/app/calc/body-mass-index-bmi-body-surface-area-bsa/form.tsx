@@ -52,7 +52,7 @@ const FormBMI = () => {
       // check for cm
       if (
         units.height == "cm" &&
-        (convertHeight < 152 || convertHeight > 213)
+        (convertHeight < 152 || convertHeight > 204)
       ) {
         if (convertHeight < 152) {
           setFormErrors({
@@ -62,7 +62,7 @@ const FormBMI = () => {
         } else {
           setFormErrors({
             ...formErrors,
-            heightError: "Too low; please change to proceed.",
+            heightError: "very high double check",
           });
         }
         // return;
@@ -78,7 +78,7 @@ const FormBMI = () => {
         } else {
           setFormErrors({
             ...formErrors,
-            heightError: "Too high; please change to proceed.",
+            heightError: "very high double check",
           });
         }
         // return;
@@ -116,7 +116,7 @@ const FormBMI = () => {
         } else {
           setFormErrors({
             ...formErrors,
-            weightError: "too high; please change to proceed.",
+            weightError: "very high double check.",
           });
         }
         // return;
@@ -132,7 +132,7 @@ const FormBMI = () => {
         } else {
           setFormErrors({
             ...formErrors,
-            weightError: "Too high: please change to proceed",
+            weightError: "very high double check",
           });
         }
         // return;
