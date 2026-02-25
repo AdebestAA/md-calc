@@ -57,12 +57,12 @@ const FormBMI = () => {
         if (convertHeight < 152) {
           setFormErrors({
             ...formErrors,
-            heightError: "value is too low",
+            heightError: "Too low; please change to proceed.",
           });
         } else {
           setFormErrors({
             ...formErrors,
-            heightError: "value is too high",
+            heightError: "Too low; please change to proceed.",
           });
         }
         // return;
@@ -73,12 +73,12 @@ const FormBMI = () => {
         if (convertHeight < 60) {
           setFormErrors({
             ...formErrors,
-            heightError: "value is too low",
+            heightError: "too low; please change to proceed.",
           });
         } else {
           setFormErrors({
             ...formErrors,
-            heightError: "value is too hight",
+            heightError: "Too high; please change to proceed.",
           });
         }
         // return;
@@ -111,12 +111,12 @@ const FormBMI = () => {
         if (convertWeight < 1) {
           setFormErrors({
             ...formErrors,
-            weightError: "value is too low",
+            weightError: "too low; please change to proceed.",
           });
         } else {
           setFormErrors({
             ...formErrors,
-            weightError: "value is too high",
+            weightError: "too high; please change to proceed.",
           });
         }
         // return;
@@ -127,12 +127,12 @@ const FormBMI = () => {
         if (convertWeight < 2) {
           setFormErrors({
             ...formErrors,
-            weightError: "value is too low",
+            weightError: "Too low; please change to proceed.",
           });
         } else {
           setFormErrors({
             ...formErrors,
-            weightError: "value is too high",
+            weightError: "Too high: please change to proceed",
           });
         }
         // return;
