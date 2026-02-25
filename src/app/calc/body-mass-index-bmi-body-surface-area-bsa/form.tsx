@@ -28,29 +28,15 @@ const FormBMI = () => {
     weightValid: boolean;
   }>({ heightValid: false, weightValid: false });
   const { isPending, mutate, data } = useBMICalculation();
-
-  //   useEffect(() => {
-  //     const timeoutId = setTimeout(() => {
-  //       handleSubmit();
-  //     }, 1000);
-
-  //     return () => clearTimeout(timeoutId);
-  //   }, [formValues.height, units, formValues.weight]);
-
-  //   useEffect(() => {
-  //     const timeoutId = setTimeout(() => {
-  //       setFormErrors({ heightError: "", weightError: "" });
-  //     }, 2000);
-  //     return () => clearTimeout(timeoutId);
-  //   }, [formErrors]);
-
-  //   Validation Functions
+  console.log(Number(data?.data?.bmi));
 
   function handleHeightValidation(value: string | number) {
     const convertHeight = Number(formValues.height);
 
     if (formValues.height && !convertHeight) {
       setFormErrors({ ...formErrors, heightError: "enter a valid number" });
+      setValid({ ...valid, heightValid: false });
+      return;
     }
 
     // Check for height
@@ -58,6 +44,7 @@ const FormBMI = () => {
       // Check if value entered is a number
       if (isNaN(convertHeight)) {
         setFormErrors({ ...formErrors, heightError: "enter a valid number" });
+        setValid({ ...valid, heightValid: false });
         return;
       }
 
@@ -67,22 +54,36 @@ const FormBMI = () => {
         units.height == "cm" &&
         (convertHeight < 152 || convertHeight > 213)
       ) {
-        setFormErrors({
-          ...formErrors,
-          heightError: "value can be from 152 - 213",
-        });
-        return;
+        if (convertHeight < 152) {
+          setFormErrors({
+            ...formErrors,
+            heightError: "value is too low",
+          });
+        } else {
+          setFormErrors({
+            ...formErrors,
+            heightError: "value is too high",
+          });
+        }
+        // return;
       }
 
       // check for in
       if (units.height == "in" && (convertHeight < 60 || convertHeight > 84)) {
-        setFormErrors({
-          ...formErrors,
-          heightError: "value can be from 60 - 84",
-        });
-        return;
+        if (convertHeight < 60) {
+          setFormErrors({
+            ...formErrors,
+            heightError: "value is too low",
+          });
+        } else {
+          setFormErrors({
+            ...formErrors,
+            heightError: "value is too hight",
+          });
+        }
+        // return;
       }
-      setFormErrors({ ...formErrors, heightError: "" });
+      //   setFormErrors({ ...formErrors, heightError: "" });
       setValid({ ...valid, heightValid: true });
     }
   }
@@ -92,6 +93,7 @@ const FormBMI = () => {
 
     if (formValues.weight && !convertWeight) {
       setFormErrors({ ...formErrors, weightError: "enter a valid number" });
+      setValid({ ...valid, weightValid: false });
     }
 
     // Check for width
@@ -99,28 +101,43 @@ const FormBMI = () => {
       // Check if value entered is a number
       if (isNaN(convertWeight)) {
         setFormErrors({ ...formErrors, weightError: "enter a valid number" });
+        setValid({ ...valid, weightValid: false });
         return;
       }
 
       // check if value is between range
       // check for cm
       if (units.weight == "kg" && (convertWeight < 1 || convertWeight > 150)) {
-        setFormErrors({
-          ...formErrors,
-          weightError: "value can be from 1 - 150",
-        });
-        return;
+        if (convertWeight < 1) {
+          setFormErrors({
+            ...formErrors,
+            weightError: "value is too low",
+          });
+        } else {
+          setFormErrors({
+            ...formErrors,
+            weightError: "value is too high",
+          });
+        }
+        // return;
       }
 
       // check for in
       if (units.weight == "lbs" && (convertWeight < 2 || convertWeight > 330)) {
-        setFormErrors({
-          ...formErrors,
-          weightError: "value can be from 2 - 330",
-        });
-        return;
+        if (convertWeight < 2) {
+          setFormErrors({
+            ...formErrors,
+            weightError: "value is too low",
+          });
+        } else {
+          setFormErrors({
+            ...formErrors,
+            weightError: "value is too high",
+          });
+        }
+        // return;
       }
-      setFormErrors({ ...formErrors, weightError: "" });
+      //   setFormErrors({ ...formErrors, weightError: "" });
       setValid({ ...valid, weightValid: true });
     }
   }
@@ -143,16 +160,6 @@ const FormBMI = () => {
     return () => clearTimeout(timeoutId);
   }, [formValues.weight]);
 
-  //   //   Valid effect
-  //   useEffect(() => {
-  //     const timeoutId = setTimeout(() => {}, 1000);
-
-  //     return () => clearTimeout(timeoutId);
-  //   }, [valid]);
-  //   useEffect(() => {
-  //     console.log(data);
-  //   }, [isPending]);
-
   useEffect(() => {
     if (!valid.heightValid || !valid.weightValid) {
       return;
@@ -164,7 +171,12 @@ const FormBMI = () => {
       weightUnit: units.weight,
       heightUnit: units.height,
     });
-  }, [valid.heightValid, valid.weightValid]);
+  }, [
+    valid.heightValid,
+    valid.weightValid,
+    formValues.height,
+    formValues.weight,
+  ]);
   return (
     <>
       <form action="my-8">
@@ -180,7 +192,7 @@ const FormBMI = () => {
                 }
                 className="border border-gray-300 focus-visible:outline-none shadow-inner px-3 h-10 w-3/4 inner-shadow md:placeholder:font-semibold placeholder:font-medium"
                 placeholder={
-                  units.weight == "kg" ? "Norm: 1 - 150" : "Norm: 2 - 330"
+                  units.weight == "kg" ? "Norm: 1 - 150kg" : "Norm: 2 - 330 lb"
                 }
               />
               <p
@@ -189,6 +201,7 @@ const FormBMI = () => {
                     ...units,
                     weight: units.weight == "kg" ? "lbs" : "kg",
                   });
+
                   setFormValues({ ...formValues, weight: "" });
                   setFormErrors({ ...formErrors, weightError: "" });
                   setValid({ ...valid, weightValid: false });
@@ -201,9 +214,13 @@ const FormBMI = () => {
                 </span>
               </p>
             </div>
-            {formErrors.weightError && (
-              <p className="text-sm text-red-500">{formErrors.weightError}</p>
-            )}
+            {formValues.weight == ""
+              ? ""
+              : formErrors.weightError && (
+                  <p className="text-sm text-red-500">
+                    {formErrors.weightError}
+                  </p>
+                )}
           </aside>
         </div>
 
@@ -219,7 +236,7 @@ const FormBMI = () => {
                 }}
                 className="border border-gray-300 focus-visible:outline-none shadow-inner px-3 h-10 w-3/4 inner-shadow md:placeholder:font-semibold placeholder:font-medium "
                 placeholder={
-                  units.height == "cm" ? "Norm: 152 - 213" : "Norm: 60 - 84"
+                  units.height == "cm" ? "Norm: 152 - 213cm" : "Norm: 60 - 84in"
                 }
               />
               <p
@@ -240,14 +257,18 @@ const FormBMI = () => {
                 </span>
               </p>
             </aside>
-            {formErrors.heightError && (
-              <p className="text-sm text-red-500">{formErrors.heightError}</p>
-            )}
+            {formValues.height == ""
+              ? ""
+              : formErrors.heightError && (
+                  <p className="text-sm text-red-500">
+                    {formErrors.heightError}
+                  </p>
+                )}
           </div>
         </div>
 
         <div className="bg-primary-two px-4 py-2  my-8">
-          {!isPending && !data && (
+          {!isPending && !data?.data?.bmi && (
             <aside className="text-white py-6">
               <h1 className="font-bold text-3xl">Result:</h1>
               <p className=" text-sm">Please fill out required fields.</p>
@@ -260,7 +281,7 @@ const FormBMI = () => {
             </div>
           )}
           {/* For result */}
-          {!isPending && data?.data && (
+          {!isPending && data?.data?.bmi && (
             <aside className="text-white flex justify-between">
               {/* right */}
               <section className="w-[48%]">
@@ -269,7 +290,7 @@ const FormBMI = () => {
                   <span className="font-medium">kg/m²</span>
                 </h1>
                 <p className="font-medium text-sm my-2">
-                  Body Mass Index (Underweight)
+                  Body Mass Index ({data.category})
                 </p>
               </section>
               {/* left */}
@@ -298,5 +319,3 @@ const FormBMI = () => {
 };
 
 export default FormBMI;
-
-function handleHeightValidation() {}
