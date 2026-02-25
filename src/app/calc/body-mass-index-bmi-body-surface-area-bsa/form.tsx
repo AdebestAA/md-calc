@@ -217,7 +217,7 @@ const FormBMI = () => {
             {formValues.weight == ""
               ? ""
               : formErrors.weightError && (
-                  <p className="text-sm text-red-500">
+                  <p className=" text-white bg-yellow-500 pl-4 py-2  mt-2 rounded-xl  font-medium">
                     {formErrors.weightError}
                   </p>
                 )}
@@ -260,7 +260,7 @@ const FormBMI = () => {
             {formValues.height == ""
               ? ""
               : formErrors.heightError && (
-                  <p className="text-sm text-red-500">
+                  <p className="text-sm text-white bg-yellow-500 pl-4 py-2  mt-2 rounded-xl  font-medium">
                     {formErrors.heightError}
                   </p>
                 )}
