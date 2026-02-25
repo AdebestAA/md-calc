@@ -62,7 +62,7 @@ const FormBMI = () => {
         } else {
           setFormErrors({
             ...formErrors,
-            heightError: "very high double check",
+            heightError: "very high double check.",
           });
         }
         // return;
@@ -78,7 +78,7 @@ const FormBMI = () => {
         } else {
           setFormErrors({
             ...formErrors,
-            heightError: "very high double check",
+            heightError: "very high double check.",
           });
         }
         // return;
@@ -132,7 +132,7 @@ const FormBMI = () => {
         } else {
           setFormErrors({
             ...formErrors,
-            weightError: "very high double check",
+            weightError: "very high double check.",
           });
         }
         // return;
