@@ -19,11 +19,11 @@ const Header = () => {
       if (window.scrollY >= 20) {
         timeoutId = setTimeout(() => {
           setScrolled(true);
-        }, 50);
+        }, 200);
       } else {
         timeoutId = setTimeout(() => {
           setScrolled(false);
-        }, 50);
+        }, 200);
       }
     };
 

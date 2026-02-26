@@ -153,7 +153,7 @@ export default function CKDEpiCalculator() {
                   This version does not include race, as do the 2009 and 2012
                   CKD-EPI creatinine and creatinine-cystatin C equations. See
                   here for more on our approach to addressing race and bias on
-                  MDCalc. With the 2021 equation, for the same creatinine value,
+                  DxRx™. With the 2021 equation, for the same creatinine value,
                   the 2021 equation will estimate a lower GFR for Black patients
                   and a higher GFR for non-Black patients.
                 </div>

@@ -61,7 +61,7 @@ export default function Footer() {
                   <Link href="#">Guidelines</Link>
                 </li>
                 <li>
-                  <Link href="#">MDCalc EHR</Link>
+                  <Link href="#">DxRx™ EHR</Link>
                 </li>
               </ul>
             </div>
@@ -96,10 +96,10 @@ export default function Footer() {
               <p className="font-semibold mb-4">About</p>
               <ul className="space-y-2 text-sm text-primary-foreground">
                 <li>
-                  <Link href="#">About MDCalc</Link>
+                  <Link href="#">About DxRx™</Link>
                 </li>
                 <li>
-                  <Link href="#">MDCalc on Race</Link>
+                  <Link href="#">DxRx™ on Race</Link>
                 </li>
                 <li>
                   <Link href="#">FAQs</Link>

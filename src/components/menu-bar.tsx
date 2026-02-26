@@ -14,7 +14,7 @@ const headerMenu = [
   },
   {
     id: 2,
-    title: "Get MDCalc in Your EHR",
+    title: "Get DxRx™ in Your EHR",
     link: "/",
   },
   {
