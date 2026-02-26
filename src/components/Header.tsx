@@ -47,15 +47,15 @@ const Header = () => {
             className={` flex-col items-center transition-all duration-500 hidden lg:flex`}
           >
             <div className="flex items-center ">
-              <span className="text-md font-extrabold text-white">MD</span>
-              <p className="flex items-center">
+              <span className="text-2xl font-extrabold text-white">DxRx™</span>
+              {/* <p className="flex items-center">
                 <img src={"/assets/plus.svg"} className="block h-4 pl-1 pt-1" />
-              </p>
+              </p> */}
             </div>
 
-            <span className="text-md font-extrabold text-white leading-none ">
+            {/* <span className="text-md font-extrabold text-white leading-none ">
               CALC
-            </span>
+            </span> */}
           </div>
         )}
 
@@ -63,15 +63,11 @@ const Header = () => {
           className={` flex-col items-center transition-all duration-500 flex lg:hidden`}
         >
           <div className="flex items-center ">
-            <span className="text-md font-extrabold text-white">MD</span>
-            <p className="flex items-center">
+            <span className="text-2xl font-extrabold text-white">DxRx™</span>
+            {/* <p className="flex items-center">
               <img src={"/assets/plus.svg"} className="block h-4 pl-1 pt-1" />
-            </p>
+            </p> */}
           </div>
-
-          <span className="text-md font-extrabold text-white leading-none ">
-            CALC
-          </span>
         </div>
       </div>
 
@@ -81,16 +77,9 @@ const Header = () => {
         <div
           className={` flex-col items-center transition-all duration-500   ${scrolled ? "max-h-0 opacity-0 -translate-y-4 hidden" : "hidden max-h-40 opacity-100 translate-y-0 lg:flex"}    `}
         >
-          <div className="flex items-center ">
-            <span className="text-6xl font-extrabold text-white">MD</span>
-            <p className="flex items-center">
-              <img src={"/assets/plus.svg"} className="block h-14 pt-4" />
-            </p>
+          <div className="flex items-center py-6">
+            <span className="text-6xl font-extrabold text-white">DxRx™</span>
           </div>
-
-          <span className="text-6xl font-extrabold text-white leading-none mb-4">
-            CALC
-          </span>
         </div>
 
         {/* search */}

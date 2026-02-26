@@ -11,14 +11,14 @@ export default function Footer() {
           <div className="lg:col-span-2">
             {/* Logo */}
             <div className="flex items-center gap-2 mb-6">
-              <div className="h-10 w-10 rounded-lg bg-emerald-400 flex items-center justify-center font-bold text-[#053A3A]">
-                MD+
+              <div className="h-10 min-w-10 rounded-lg bg-emerald-400 flex items-center justify-center font-bold text-[#053A3A] px-4">
+                DxRx™
               </div>
-              <span className="font-semibold text-lg">Calc</span>
+              {/* <span className="font-semibold text-lg">Calc</span> */}
             </div>
 
             <h2 className="text-2xl lg:text-3xl font-semibold leading-snug max-w-md">
-              MDCalc is utilized by millions of clinicians to treat hundreds of
+              DxRx™ is utilized by millions of clinicians to treat hundreds of
               millions of patients worldwide.
             </h2>
 
@@ -150,7 +150,7 @@ export default function Footer() {
       <div className="bg-white border-t">
         <div className="max-w-7xl mx-auto px-6 lg:px-16 py-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
           <p className="text-gray-600">
-            MDCalc ©2005-2026 · All Rights Reserved ·{" "}
+            All Rights Reserved ·{" "}
             <Link href="#" className="underline">
               Terms of Use
             </Link>{" "}
