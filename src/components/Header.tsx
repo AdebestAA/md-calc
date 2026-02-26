@@ -46,11 +46,12 @@ const Header = () => {
           <div
             className={` flex-col items-center transition-all duration-500 hidden lg:flex`}
           >
-            <div className="flex items-center ">
-              <span className="text-2xl font-extrabold text-white">DxRx™</span>
-              {/* <p className="flex items-center">
-                <img src={"/assets/plus.svg"} className="block h-4 pl-1 pt-1" />
-              </p> */}
+            <div className="flex flex-col items-center text-white">
+              <span className="text-lg font-extrabold ">DxRx™</span>
+              <p className="flex gap-x-2 items-center text-lg font-extrabold">
+                <span>by</span>{" "}
+                <span className="text-emerald-800"> Orakle</span>
+              </p>
             </div>
 
             {/* <span className="text-md font-extrabold text-white leading-none ">
@@ -62,11 +63,12 @@ const Header = () => {
         <div
           className={` flex-col items-center transition-all duration-500 flex lg:hidden`}
         >
-          <div className="flex items-center ">
-            <span className="text-2xl font-extrabold text-white">DxRx™</span>
-            {/* <p className="flex items-center">
-              <img src={"/assets/plus.svg"} className="block h-4 pl-1 pt-1" />
-            </p> */}
+          <div className="flex flex-col items-center text-white">
+            <span className="text-sm font-extrabold text-white">DxRx™</span>
+            <p className="flex font-bold gap-2 items-center text-sm ">
+              <span>by</span> <span className="text-emerald-800">Orakle</span>
+              {/* <img src={"/assets/plus.svg"} className="block h-4 pl-1 pt-1" /> */}
+            </p>
           </div>
         </div>
       </div>
@@ -75,10 +77,13 @@ const Header = () => {
       <div className="w-[50%]">
         {/* logo */}
         <div
-          className={` flex-col items-center transition-all duration-500   ${scrolled ? "max-h-0 opacity-0 -translate-y-4 hidden" : "hidden max-h-40 opacity-100 translate-y-0 lg:flex"}    `}
+          className={` flex-col items-center  transition-all duration-500   ${scrolled ? "max-h-0 opacity-0 -translate-y-4 hidden" : "hidden max-h-40 opacity-100 translate-y-0 lg:flex"}    `}
         >
-          <div className="flex items-center py-6">
+          <div className="flex flex-col items-center pb-4 text-white">
             <span className="text-6xl font-extrabold text-white">DxRx™</span>
+            <p className="flex gap-x-2 items-center text-6xl font-extrabold">
+              <span>by</span> <span className="text-emerald-800"> Orakle</span>
+            </p>
           </div>
         </div>
 
