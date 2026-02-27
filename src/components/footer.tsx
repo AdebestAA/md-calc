@@ -18,8 +18,8 @@ export default function Footer() {
             </div>
 
             <h2 className="text-2xl lg:text-3xl font-semibold leading-snug max-w-md">
-              DxRx™ is utilized by millions of clinicians to treat hundreds of
-              millions of patients worldwide.
+              {/* DxRx™ is utilized by millions of clinicians to treat hundreds of
+              millions of patients worldwide. */}
             </h2>
 
             {/* App buttons */}

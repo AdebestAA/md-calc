@@ -2,6 +2,7 @@
 import { ChevronDown, ChevronUp, Share, Star } from "lucide-react";
 import React, { useState } from "react";
 import FormBMI from "./form";
+import AccordComp from "./components/accord-comp";
 
 const Page = () => {
   const [accToShow, setAccToShow] = useState<
@@ -64,141 +65,51 @@ const Page = () => {
               adiposity index.
             </p>
           </header>
-          {/* Accord like items */}
-
-          <aside className="my-4">
-            {/* Accord heading */}
-            <div className=" text-sm">
-              <div className="flex text-sm border rounded mb-6">
-                {["When to Use", "Pearls/Pitfalls", "When Use"].map(
-                  (item, index) => {
-                    return (
-                      <button
-                        key={index}
-                        onClick={() =>
-                          setAccToShow(
-                            item.toLocaleLowerCase() as
-                              | "when to use"
-                              | "pearls/pitfalls"
-                              | "when use",
-                          )
-                        }
-                        className={`${item.toLocaleLowerCase() == accToShow && "bg-primary text-white"} flex-1 px-3 py-2 border border-gray-800 font-semibold 0  cursor-pointer  flex items-center justify-evenly text-sm`}
-                      >
-                        <span>{item}</span>
-                        <span>
-                          {item.toLocaleLowerCase() == accToShow ? (
-                            <ChevronUp />
-                          ) : (
-                            <ChevronDown />
-                          )}
-                        </span>
-                      </button>
-                    );
-                  },
-                )}
-              </div>
-            </div>
-
-            {/* Accord items */}
-            <div className="text-sm">
-              {accToShow == "when to use" && (
-                <ul className="pl-8 list-disc bg-gray-300 py-4 px-2">
-                  <li>
-                    <span className="font-semibold">BMI:</span>
-                    <span>
-                      This calculation is routinely used during clinical
-                      evaluations to estimate the appropriateness of an
-                      individual&apos;s weight relative to their height, serving
-                      as a preliminary step in identifying patients who are
-                      underweight or overweight.
-                    </span>
-                  </li>
-
-                  <li className="mt-2">
-                    <span className="font-semibold">BSA:</span>
-                    <span>
-                      This formula estimates an individual&apos;s total external
-                      surface area, aiding in calculating dosages for
-                      medications, such as chemotherapy, and measuring cardiac
-                      index.
-                    </span>
-                  </li>
-                </ul>
-              )}
-
-              {accToShow == "pearls/pitfalls" && (
-                <ul className="pl-8 list-disc bg-gray-300 py-4 px-2">
-                  <li>
-                    Always use the most recent height and weight measurements to
-                    ensure accuracy.
-                  </li>
-
-                  <li>
-                    Remember that both BMI and BSA are part of a larger clinical
-                    context and should be used in conjunction with other
-                    assessments and patient history.
-                  </li>
-                  <h1 className="font-semibold my-2">BMI:</h1>
-                  <li>Does not distinguish between fat and muscle mass. </li>
-                  <li>
-                    Tends to overestimate body fat in individuals with very high
-                    muscle mass who are otherwise healthy, and can underestimate
-                    it in older adults due to age-related muscle loss.{" "}
-                  </li>
-                  <li>
-                    The typical classification may underestimate the risk of
-                    cardiovascular disease associated with obesity in Asian
-                    populations. Organizations like the Wold Health Organization
-                    (WHO) and National Institutes of Health (NIH) recommend
-                    lower BMI thresholds for these individuals. Please see
-                    Evidence for more details.{" "}
-                  </li>
-                  <li>
-                    BMI is based primarily on data collection from non-Hispanic
-                    white populations, making its generalizability prone to
-                    inaccuracy.
-                  </li>
-                  <li>
-                    Some organizations, such as the AMA, have recognized the
-                    importance of using a variety of measures to determine an
-                    appropriate risk assessment and advise clinicians to
-                    eliminate the use of BMI as a sole indicator of risk.
-                  </li>
-                  <li>
-                    BMI should be utilized in conjunction with measurements of
-                    visceral fat, body adiposity index, waist circumference, and
-                    other metabolic/genetic factors when diagnosing obesity
-                    (Rubino et al., 2025).
-                  </li>
-                  <h1 className="font-semibold my-2">BSA:</h1>
-                  <li>
-                    Multiple formulas for BSA are available. This tool utilizes
-                    the Mosteller formula.
-                  </li>
-                  <li>
-                    May be less precise for neonates and infants, as well as for
-                    individuals at extreme values of height and weight.
-                  </li>
-                </ul>
-              )}
-              {/* when use */}
-              {accToShow == "when use" && (
-                <article className="pl-8 bg-gray-300 py-4 px-2">
-                  BMI provides a quick estimate of adiposity, while the BSA
-                  calculation helps estimate an individual&apos;s total external
-                  surface area, which is difficult to measure directly.
-                </article>
-              )}
-            </div>
-          </aside>
 
           {/* form */}
 
           <FormBMI />
+          {/* Accord like items */}
+
+          <>
+            <AccordComp />
+          </>
         </div>
 
         {/* Second Section */}
+        <>
+          <div className=" md:w-[30%]  w-full h-fit bg-gray-200 text-sm p-2  lg:my-0 my-4">
+            <h1 className="font-bold text-center mt-4">About the Creator</h1>
+
+            <div>
+              <span className="font-semibold text-md">
+                Adolphe Quetelet. Quetelet (1796-1874)
+              </span>{" "}
+              <span>
+                was a Belgian mathematician, astronomer, and statistician who
+                pioneered the application of statistical methods to human
+                characteristics. His work on “average man” concepts led to the
+                Quetelet Index, which later became the foundation of modern body
+                mass index (BMI) as a standardized population-level measure of
+                relative weight.
+              </span>
+            </div>
+            {/* Second */}
+            <div className="mt-4">
+              <span className="font-semibold text-md">
+                Robert D. Mosteller, MD. Mosteller (1936-2017)
+              </span>{" "}
+              <span>
+                was an American physician who published a simplified body
+                surface area (BSA) calculation to make BSA estimation practical
+                at the bedside and easy to implement in clinical tools. The
+                “Mosteller formula” became widely adopted because it is simple
+                and performs similarly to more complex BSA equations used in
+                clinical dosing conventions.
+              </span>
+            </div>
+          </div>
+        </>
       </main>
     </div>
   );
